@@ -1,0 +1,22 @@
+{
+  "author": "Corno",
+  "bin": {},
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/corno/pareto-core/issues"
+  },
+  "description": "",
+  "homepage": "https://github.com/corno/pareto-core#readme",
+  "license": "ISC",
+  "name": "pareto-core-types",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corno/pareto-core.git"
+  },
+  "types": "dist/index.d.ts",
+  "version": "0.1.0",
+  "content-fingerprint": "ee7a2bbec0997b931b8071795749269d3870147b"
+}
