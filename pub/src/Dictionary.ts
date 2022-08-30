@@ -11,7 +11,7 @@ export type Dictionary<T> = {
     ) => Dictionary<NT>
 
     readonly "reduce": <NT>(
-        callback: (entry: T, current: NT, key: string) => NT,
-        seed: NT
+        seed: NT,
+        callback: (current: NT, entry: T, key: string) => NT,
     ) => NT
 }
