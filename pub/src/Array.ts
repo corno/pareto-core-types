@@ -1,6 +1,10 @@
 import { AsyncValue } from "./AsyncValue"
 
 export type Array<T> = {
+    readonly "forEach": (
+        $c: ($: T) => void
+    ) => void
+
     readonly "map": <NT>(
         $c: ($: T) => NT
     ) => Array<NT>
