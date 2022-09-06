@@ -1,17 +1,19 @@
+import { AsyncValue } from "./AsyncValue"
 
 export type Dictionary<T> = {
-    readonly "forEach": (
-        sortAlgorithm: (a: string, b: string) => boolean,
-        callback: (entry: T, key: string) => void,
-    ) => void
-    readonly "map": <NT>(cb: (v: T, key: string) => NT) => Dictionary<NT>
-
-    readonly "filter": <NT>(
-        cb: (v: T, key: string) => NT | undefined
+    readonly "map": <NT>(
+        $c: ($: T, key: string) => NT
     ) => Dictionary<NT>
-
+    readonly "filter": <NT>(
+        $c: ($: T, key: string) => NT | undefined
+    ) => Dictionary<NT>
     readonly "reduce": <NT>(
-        seed: NT,
-        callback: (current: NT, entry: T, key: string) => NT,
+        $: NT,
+        $c: (current: NT, $: T, key: string) => NT,
     ) => NT
+
+
+    readonly "asyncMap": <NT>(
+        $c: ($: T, key: string) => AsyncValue<NT>
+    ) => AsyncValue<Dictionary<NT>>
 }
