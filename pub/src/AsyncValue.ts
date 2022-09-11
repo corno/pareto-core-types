@@ -10,4 +10,5 @@ export type AsyncValue<T> = {
     _execute: (
         callback: ($: T) => void
     ) => void
+    _isGuaranteedToReturnAResult: boolean
 }

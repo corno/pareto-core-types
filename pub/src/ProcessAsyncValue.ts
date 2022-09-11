@@ -2,5 +2,5 @@ import { AsyncValue } from "./AsyncValue";
 
 export type ProcessAsyncValue = <T>(
     $: AsyncValue<T>,
-    $c: ($: T) => void
+    $i: ($: T) => void
 ) => void
