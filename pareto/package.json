@@ -9,6 +9,6 @@
     "publish": "./scripts/publish.sh"
   },
   "dependencies": {
-    "pareto-buildenvironment": "^0.0.0"
+    "pareto-buildenvironment": "^0.97.0"
   }
 }
