@@ -2,21 +2,21 @@ import { AsyncValue } from "./AsyncValue"
 
 export type Array<T> = {
     readonly "forEach": (
-        $c: ($: T) => void
+        $i: ($: T) => void //this one could (should?) be implemented by a resource as well, it's a pure interface, it does not return a value
     ) => void
 
     readonly "map": <NT>(
-        $c: ($: T) => NT
+        $v: ($: T) => NT
     ) => Array<NT>
     readonly "filter": <NT>(
-        $c: ($: T) => NT | undefined
+        $v: ($: T) => NT | undefined
     ) => Array<NT>
     readonly "reduce": <NT>(
         $: NT,
-        $c: (current: NT, $: T) => NT,
+        $v: (current: NT, $: T) => NT,
     ) => NT
 
     readonly "asyncMap": <NT>(
-        $c: ($: T) => AsyncValue<NT>
+        $v: ($: T) => AsyncValue<NT>
     ) => AsyncValue<Array<NT>>
 }
