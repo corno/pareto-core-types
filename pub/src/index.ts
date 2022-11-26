@@ -1,6 +1,10 @@
 
 export * from "./Array"
-export * from "./Nested"
-export * from "./ComputedValue"
+export * from "./AsyncFunction"
 export * from "./AsyncValue"
+export * from "./ComputedValue"
+export * from "./Creator"
 export * from "./Dictionary"
+export * from "./Function"
+export * from "./Procedure"
+export * from "./Nested"

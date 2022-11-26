@@ -4,6 +4,10 @@ export type Dictionary<T> = {
     readonly "map": <NT>(
         $v: ($: T, key: string) => NT
     ) => Dictionary<NT>
+    readonly "forEach": <NT>(
+        isFirstBeforeSecond: (first: string, second: string) => boolean,
+        $v: ($: T, key: string) => NT
+    ) => Dictionary<NT>
     readonly "filter": <NT>(
         $v: ($: T, key: string) => NT | undefined
     ) => Dictionary<NT>
