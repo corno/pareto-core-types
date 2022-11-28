@@ -1,6 +1,7 @@
 
 export * from "./Array"
 export * from "./AsyncFunction"
+export * from "./AsyncProcessingCreator"
 export * from "./AsyncValue"
 export * from "./ComputedValue"
 export * from "./Creator"
