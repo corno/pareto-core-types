@@ -1,11 +1,7 @@
 
 export * from "./Array"
-export * from "./AsyncFunction"
-export * from "./AsyncProcessingCreator"
 export * from "./AsyncValue"
 export * from "./ComputedValue"
-export * from "./Creator"
 export * from "./Dictionary"
-export * from "./Function"
-export * from "./Procedure"
+export * from "./OptionalValue"
 export * from "./Nested"

@@ -1,1 +1,0 @@
-export type Creator<Dependencies, Algorithm> = ($d: Dependencies) => Algorithm
