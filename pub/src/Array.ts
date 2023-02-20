@@ -12,6 +12,6 @@ export type Array<T> = {
     readonly "__forEach": (
         $i: ($: T) => void
     ) => void
-    readonly "__length": () => number
+    readonly "__getLength": () => number
     readonly "__getElementAt": (index: number) => T //throws exception if index < 0 or index >= length
 }

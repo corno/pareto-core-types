@@ -11,7 +11,7 @@ export type Dictionary<T> = {
     
     //methods that are only to be used by resources
     readonly "__mapWithKey": <NT>(
-        $v: ($: T) => NT
+        $v: ($: T, key: string) => NT
     ) => Dictionary<NT>
     readonly "__forEach": (
         isFirstBeforeSecond: (first: string, second: string) => boolean,
