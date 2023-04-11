@@ -1,17 +1,17 @@
 import { AsyncValue } from "./AsyncValue"
 
-export type Array<T> = {
-    readonly "map": <NT>(
+export interface Array<T> {
+    map<NT>(
         $v: ($: T) => NT
-    ) => Array<NT>
-    readonly "asyncMap": <NT>(
+    ): Array<NT>
+    asyncMap<NT>(
         $v: ($: T) => AsyncValue<NT>
-    ) => AsyncValue<Array<NT>>
+    ): AsyncValue<Array<NT>>
 
     //methods that are only to be used by resources
-    readonly "__forEach": (
+    __forEach(
         $i: ($: T) => void
-    ) => void
-    readonly "__getLength": () => number
-    readonly "__getElementAt": (index: number) => T //throws exception if index < 0 or index >= length
+    ): void
+    __getLength(): number
+    __getElementAt(index: number): T //throws exception if index < 0 or index >= length
 }

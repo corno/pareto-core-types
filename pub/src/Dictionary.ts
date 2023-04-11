@@ -1,28 +1,28 @@
 import { AsyncValue } from "./AsyncValue"
 
-export type Dictionary<T> = {
-    readonly "map": <NT>(
+export interface Dictionary<T> {
+    map<NT>(
         $v: ($: T) => NT
-    ) => Dictionary<NT>
-    readonly "asyncMap": <NT>(
+    ): Dictionary<NT>
+    asyncMap<NT>(
         $v: ($: T) => AsyncValue<NT>
-    ) => AsyncValue<Dictionary<NT>>
-    
-    
+    ): AsyncValue<Dictionary<NT>>
+
+
     //methods that are only to be used by resources
-    readonly "__mapWithKey": <NT>(
+    __mapWithKey<NT>(
         $v: ($: T, key: string) => NT
-    ) => Dictionary<NT>
-    readonly "__forEach": (
+    ): Dictionary<NT>
+    __forEach(
         isFirstBeforeSecond: (first: string, second: string) => boolean,
         $v: ($: T, key: string) => void
-    ) => void
-    readonly "__unsafeGetEntry": (
+    ): void
+    __unsafeGetEntry(
         key: string,
-    ) => T
-    readonly "__getEntry": <RT>(
+    ): T
+    __getEntry<RT>(
         key: string,
         exists: ($: T) => RT,
         nonExists: () => RT,
-    ) => RT
+    ): RT
 }
