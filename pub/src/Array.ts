@@ -1,17 +1,48 @@
 import { AsyncValue } from "./AsyncValue"
 
+
+/**
+ * A Pareto array.
+ * unmutable and minimal by design
+ */
 export interface Array<T> {
+    /**
+     * 
+     * @param $v callback to transform an individual entry.
+     */
     map<NT>(
         $v: ($: T) => NT
     ): Array<NT>
+
+    /**
+     * maps the array to AsyncValue that contains an array
+     * @param $v callback that provides an async value. keys are not available.
+     */
     asyncMap<NT>(
         $v: ($: T) => AsyncValue<NT>
     ): AsyncValue<Array<NT>>
 
-    //methods that are only to be used by resources
-    __forEach(
-        $i: ($: T) => void
+
+    /**
+     * This method is only to be used by resources
+     * iterates over all entries
+     * 
+     * @param $v callback to process the entry
+     */    __forEach(
+        $v: ($: T) => void
     ): void
+
+
+    /**
+     * This method is only to be used by resources
+     * 
+     */
     __getLength(): number
-    __getElementAt(index: number): T //throws exception if index < 0 or index >= length
+
+    /**
+     * This method is only to be used by resources
+     * 
+     * @param index 
+     */
+    __getElementAt(index: number): T //panics if index < 0 or index >= length
 }
