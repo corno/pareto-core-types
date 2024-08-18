@@ -15,11 +15,18 @@ export type RawOptionalValue<T> = [false] | [true, T]
 export interface OptionalValue<T> {
     /**
      * 
-     * @param $v callback to transform an individual entry. keys are not available.
+     * @param set what to do when the value was set, returns the new type
+     * @param notSet  what to do when the value was not set, returns the new type
      */
     map<NT>(
         set: ($: T) => NT,
         notSet: () => NT,
+    ): NT
+    /**
+     * 
+     */
+    mapToNewOptional<NT>(
+        set: ($: T) => NT,
     ): OptionalValue<NT>
 
     raw: RawOptionalValue<T>
