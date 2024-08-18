@@ -16,7 +16,7 @@ export interface Dictionary<T> {
 
     /**
      * 
-     * @param $v callback that provides an async value. keys are not available.
+     * @param $v callback that provides an {@link AsyncValue}. keys are not available.
      */
     asyncMap<NT>(
         $v: ($: T) => AsyncValue<NT>
@@ -47,7 +47,7 @@ export interface Dictionary<T> {
      * @deprecated replaced by __getEntryOrPanic
      * 
      * This method is only to be used by resources
-     * gets an entry. If the entry does not exist, a panic will be raised.
+     * gets an entry. If the entry does not exist, the code will panic and terminate.
      */
     __unsafeGetEntry(
         key: string,
@@ -55,7 +55,7 @@ export interface Dictionary<T> {
 
     /**
      * This method is only to be used by resources
-     * gets an entry. If the entry does not exist, a panic will be raised.
+     * gets an entry. If the entry does not exist, the code will panic and terminate.
      */
     __getEntryOrPanic(
         key: string,
@@ -78,7 +78,7 @@ export interface Dictionary<T> {
 
     /**
      * This method is only to be used by resources
-     * returns an OptionalValue<T> reflecting wether the entry existed or not
+     * returns an {@link OptionalValue } of type T reflecting wether the entry existed or not
      * 
      * @param key 
      */

@@ -15,7 +15,7 @@ export interface Array<T> {
     ): Array<NT>
 
     /**
-     * maps the array to AsyncValue that contains an array
+     * maps the array to {@link AsyncValue} that contains an array
      * @param $v callback that provides an async value. keys are not available.
      */
     asyncMap<NT>(
