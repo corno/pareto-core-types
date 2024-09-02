@@ -7,5 +7,9 @@ Specifically the lib-pareto-test package and its dependencies need to be fixed. 
 Current best approach:
 -disable all tests, and publish without tests, then enable tests again.
 
+# validating that a project only uses one version of this package
+in the root dir:
+node ./scripts/scripts/validateSingleVersionOfParetoTypesPackage.js ./typescript/pub/
+
 # publishing
 just use one of the 'publish' scripts
