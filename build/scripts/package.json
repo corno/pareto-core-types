@@ -1,6 +1,0 @@
-{
-  "scripts": {
-    "publish patch": "./publish.sh patch",
-    "publish minor": "./publish.sh minor"
-  }
-}
